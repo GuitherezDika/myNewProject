@@ -77,3 +77,41 @@ To learn more about React Native, take a look at the following resources:
 - [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
 - [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
 - [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+
+================
+https://pixabay.com/api
+guitherez.git@gmail.com
+
+https://pixabay.com/api/docs/
+video = https://pixabay.com/api/videos/?key=46918576-4f75666adce4ddbf7c8a4d935
+image = https://pixabay.com/api?key=46918576-4f75666adce4ddbf7c8a4d935
+
+guitherez.dika@gmail.com
+dika123                                          
+12345678
+
+
+======
+
+TYPESCRIPT
+Redux
+
+lifecycle
+OPTIMASI react native
+useRef,
+useMemo,
+useCallback
+useEffectHooks
+useFocusEffect,
+hindari rerender
+
+sinkronisasi 
+
+JEST
+JENKINS
+React native push notification
+React native firebase messaging
+crashlytics
+crashlog
+
+================
