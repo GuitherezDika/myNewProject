@@ -42,7 +42,9 @@ type imageType =  {
     comments: number,
     user_id: number,
     user: string,
-    userImageURL: string
+    userImageURL: string,
+    liked?: boolean,
+    disliked?: boolean
 }
 
 export type {

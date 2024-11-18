@@ -1,9 +1,7 @@
 import React, {useCallback, useEffect} from 'react';
-import { SafeAreaView, Text, View } from 'react-native';
-import { TrailerList } from '../components/TrailerList';
+import { SafeAreaView } from 'react-native';
 import { styles } from '../styles';
 import { useFocusEffect } from '@react-navigation/native';
-import { getImage } from '../api/pixabayImg';
 import { ImageList } from '../components/ImageList';
 
 function HomeScreen() {

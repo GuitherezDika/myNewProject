@@ -13,12 +13,17 @@ export const ImageList = () => {
     const [loading, setLoading] = useState<boolean>(false);
 
     const onGetImage = async () => {
-        console.log('ON GET IMAGE----');
-        
         setLoading(true);
         try {
             const response = await getImage({signal: controller.signal});
-            setData(response.data.hits);
+            const newData = response.data.hits.map((item: imageType) => {
+                return({
+                    ...item,
+                    liked: false,
+                    disliked: false,
+                });
+            });
+            setData(newData);
             return response;
         }
         catch (error) {
@@ -26,20 +31,20 @@ export const ImageList = () => {
                 console.log('true');
                 Alert.alert('Error', `${error.message}`)
             } else {
-                console.log('ggg');
-                Alert.alert('Failed to Fetch API', `${error}`)
+                console.log('failed to catch an api');
+                Alert.alert('Failed to Fetch API', `${error}`);
             }
         }
         finally {
-            setLoading(false)
+            setLoading(false);
         }
     };
 
     useEffect(()=> {
-        onGetImage()
+        onGetImage();
         return () => {
-            controller.abort()
-        }
+            controller.abort();
+        };
     }, []);
 
     if(loading){
@@ -49,17 +54,13 @@ export const ImageList = () => {
     const RenderItem = ({data}: {data: imageType}) => {
         return (
             <View>
-                <ImageCard uri={data.webformatURL}/>
+                <ImageCard itemData={data} />
             </View>
         )
     }
 
     return (
         <View>
-            <TouchableOpacity>
-                <Text style={styles.text}>Image +</Text>
-            </TouchableOpacity>
-            <Text style={styles.text}>Elapsed seconds:</Text>
             <FlatList
                 data={data}
                 renderItem={({item, index}) => {
@@ -68,7 +69,6 @@ export const ImageList = () => {
                             <RenderItem data={item} />
                         </View>
                     )
-                    
                 }}
                 // keyExtractor={(item) => item.id}
             />

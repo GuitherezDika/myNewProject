@@ -20,6 +20,15 @@ export const styles = StyleSheet.create({
     imageView: {
         width: '100%', 
         height: 140
+    },
+    rowBetween: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        marginTop: 8
+    },
+    iconCard: {
+        width: 40,
+        height: 40
     }
 })
 
