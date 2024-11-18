@@ -16,11 +16,12 @@ function SettingsScreen() {
     useCallback(()=> {
       console.log('callback setting +++');
     }, [])
-  ) 
+  );
+
     return (
         <SafeAreaView style={styles.container}>
-        <Counter />
-      </SafeAreaView>
+          <Counter />
+        </SafeAreaView>
     );
 }
 export default SettingsScreen;
