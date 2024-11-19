@@ -47,9 +47,40 @@ type imageType =  {
     disliked?: boolean
 }
 
+type sizeVideoType = {
+    url: string,
+    width: number,
+    height: number,
+    size: number,
+    thumbnail: string
+}
+
+type videoType = {
+    id: number,
+    pageURL: string,
+    type: string,
+    tags: string,
+    duration: number,
+    videos: {
+        large: sizeVideoType,
+        medium: sizeVideoType,
+        small: sizeVideoType,
+        tiny: sizeVideoType
+    },
+    views: number,
+    downloads: number,
+    likes: number,
+    user_id: number,
+    user: string,
+    userImageUrl: string,
+    liked?: boolean,
+    disliked?: boolean
+}
+
 export type {
     paramTrailer,
     trailerResponse,
     pixaParam,
-    imageType
+    imageType,
+    videoType
 }

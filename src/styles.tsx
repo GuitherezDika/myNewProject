@@ -6,7 +6,8 @@ export const styles = StyleSheet.create({
         marginVertical: 20
     },
     container: {
-        padding: 24
+        padding: 24,
+        flex: 1
     },
     imageContainer: {
         width: '100%',

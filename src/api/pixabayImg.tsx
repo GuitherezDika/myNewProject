@@ -7,7 +7,7 @@ interface ApiRespons {
     results: trailerResponse[]
 }
 
-const pixaKey = '46918576-4f75666adce4ddbf7c8a4d935';
+export const pixaKey = '46918576-4f75666adce4ddbf7c8a4d935';
 export const getImage = async (params: pixaParam) => {
     try {
         const response = await axiosPixa.get(`?key=${pixaKey}`, {
