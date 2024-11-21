@@ -12,6 +12,7 @@ import HomeScreen from './src/screens/Home';
 import SettingsScreen from './src/screens/Setting';
 import Icon from 'react-native-vector-icons/EvilIcons';
 import { ThemeProvider, useTheme } from './src/components/theme/ThemeContext';
+import ExclamationScreen from './src/screens/Exclamation';
 
 const Tab = createBottomTabNavigator();
 
@@ -33,6 +34,8 @@ const AppContainer = () => {
                 : 'archive'
             } else if (route.name === 'Settings') {
               iconName = focused ? 'gear' : 'gear';
+            } else if (route.name === 'Exclamation') {
+              iconName = focused ? 'exclamation' : 'exclamation';
             }
             return <Icon name={iconName} size={26} color={colors} />
           },
@@ -49,6 +52,12 @@ const AppContainer = () => {
         }}
         />
         <Tab.Screen name="Settings" component={SettingsScreen} options={{
+          headerStyle: {
+            backgroundColor: theme.background
+          },
+          headerTintColor: theme.text,
+        }} />
+        <Tab.Screen name="Exclamation" component={ExclamationScreen} options={{
           headerStyle: {
             backgroundColor: theme.background
           },

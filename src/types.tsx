@@ -77,10 +77,16 @@ type videoType = {
     disliked?: boolean
 }
 
+type bufferType = {
+    isBuffering: boolean,
+    target: number
+}
+
 export type {
     paramTrailer,
     trailerResponse,
     pixaParam,
     imageType,
-    videoType
+    videoType,
+    bufferType,
 }

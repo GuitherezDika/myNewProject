@@ -5,6 +5,9 @@ export const styles = StyleSheet.create({
         fontSize: 24, 
         marginVertical: 20
     },
+    smallText: {
+        fontSize: 16, 
+    },
     container: {
         padding: 24,
         flex: 1
@@ -30,6 +33,13 @@ export const styles = StyleSheet.create({
     iconCard: {
         width: 40,
         height: 40
-    }
+    },
+    backgroundVideo: {
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        bottom: 0,
+        right: 0,
+    },
 })
 

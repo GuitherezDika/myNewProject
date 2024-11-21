@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { ActivityIndicator, Alert, FlatList, Text, TextInput, TouchableOpacity, View } from "react-native";
 import axios from "axios";
 import { videoType } from "../types";
@@ -8,6 +8,7 @@ import { VideoCard } from "./VideoCard";
 
 export const VideoList = () => {
     const controller = new AbortController();
+    const videoListRef = useRef([]);
 
     const [data, setData] = useState<videoType[]>([]);
     const [loading, setLoading] = useState<boolean>(false);
@@ -51,10 +52,18 @@ export const VideoList = () => {
         return <ActivityIndicator size={"large"} color={'#0000ff'} />
     }
 
-    const RenderItem = ({data}: {data: videoType}) => {
+    const RenderItem = ({data, id}: {data: videoType, id: number}) => {
         return (
             <View>
-                <VideoCard itemData={data} />
+                <VideoCard 
+                itemData={data} 
+                ref={el => {
+                    videoListRef.current[id] = el
+                }}
+                // ref={videoListRef}
+                isSoundButton={true}
+                resizeMode='cover'
+            />
             </View>
         )
     }
@@ -66,11 +75,11 @@ export const VideoList = () => {
                 renderItem={({item, index}) => {
                     return (
                         <View key={index}>                                                                                                                                                                           
-                            <RenderItem data={item} />
+                            <RenderItem data={item} id={index} />
                         </View>
                     )
                 }}
-                // keyExtractor={(item) => item.id}
+                keyExtractor={(item, index) => index.toString()}
             />
         </View>
     )
