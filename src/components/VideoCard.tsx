@@ -90,7 +90,7 @@ export const VideoCard = forwardRef(({ itemData, resizeMode, isSoundButton }: { 
 
     return (
         <View style={[styles.imageContainer, {borderColor: theme.borderColor}]}>
-            <Video 
+            {/* <Video 
                 ref={videoRef}  
                 style={styles.backgroundVideo}
                 paused={paused}
@@ -112,7 +112,7 @@ export const VideoCard = forwardRef(({ itemData, resizeMode, isSoundButton }: { 
                 // onError={onError}
                 poster={thumbnail}  
                 // controls={true}
-            />
+            /> */}
             {smallLoader && (
                 <ActivityIndicator size={'small'} color={theme.text} />
             )}
@@ -121,7 +121,7 @@ export const VideoCard = forwardRef(({ itemData, resizeMode, isSoundButton }: { 
                     <Icon name={videoData.liked ? 'heart' : 'heart-outline'} size={30} color={videoData.liked ? 'green' : 'gray'} />
                 </TouchableOpacity>
                 <Button title="-" onPress={onReduce} />
-                <Text>{numbers}</Text>
+                    <Text>{numbers}</Text>
                 <Button title="++" onPress={onAdd} />
                 <TouchableOpacity onPress={onPressRight} style={styles.iconCard}>
                     <Icon name={videoData.disliked ? 'heart-dislike-sharp' : 'heart-dislike-outline'} size={30} color={videoData.disliked ? 'green' : 'gray'} />

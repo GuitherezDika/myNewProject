@@ -56,14 +56,14 @@ export const VideoList = () => {
         return (
             <View>
                 <VideoCard 
-                itemData={data} 
-                ref={el => {
-                    videoListRef.current[id] = el
-                }}
-                // ref={videoListRef}
-                isSoundButton={true}
-                resizeMode='cover'
-            />
+                    itemData={data} 
+                    // ref={el => {
+                    //     videoListRef.current[id] = el
+                    // }}
+                    ref={videoListRef}
+                    isSoundButton={true}
+                    resizeMode='cover'
+                />
             </View>
         )
     }
