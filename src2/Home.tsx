@@ -20,25 +20,15 @@ const useHomeHooks = () => {
     const [counter, setCounter] = useState(0);
 
     const handleDataA = ({el, index}: dataFruit ) => {
-        let tempDataB = dataB.filter((datam, i) => {
-            console.log({datam, i});
-            
-        });
+        dataA.splice(index, 1);
         let dataBv2 = [...dataB, el];
-        
-        console.log(tempDataB);
-        
-        // tempDataB.push(el);
-        // setDataB(tempDataB);
-        // dataA.splice(index, 1);
+        setDataB(dataBv2);
     }
     
     const handleDataB = ({el, index}: dataFruit) => {
-            
-        let tempDataA = dataA;
-        tempDataA.push(el);
-        setDataA(tempDataA);
         dataB.splice(index, 1);
+        let dataAv2 = [...dataA, el];
+        setDataA(dataAv2);
     }
 
     return {
@@ -83,6 +73,7 @@ const Home = () => {
                 style={{ backgroundColor: 'gray', marginBottom: 15 }}
                 placeholder="Enter the username"
             />
+            <Text>=========== LIST A ===========</Text>
 
             {dataA.map((el, index) => (
                 <ListDataView
@@ -100,12 +91,6 @@ const Home = () => {
                 onPress={handleDataB}
             />
             ))}
-
-            <Text>=========== C ===========</Text>
-            <Text>{counter}</Text>
-            <TouchableOpacity onPress={() => setCounter(counter + 1)}>
-                <Text>++</Text>
-            </TouchableOpacity>
         </View>
     )
 }
